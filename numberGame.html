@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<p id="answer"></p>
+<p id="uanswer"></p>
+<p id="response"></p>
+
+
+
+<script type="text/javascript">
+var q = prompt("number 1-5");
+
+function computerChoice() {
+	return Math.floor(Math.random() * 5 + 1);
+}
+document.getElementById("answer").innerHTML = "Computer Choice: " + computerChoice();
+
+if (q === computerChoice()) {
+	document.getElementById("response").innerHTML = "You guessed right";
+}
+else {
+	document.getElementById("response").innerHTML = "You guessed wrong";
+}
+if (q < 1 || q > 5) {
+	document.getElementById("response").innerHTML = "Please use a number 1-5";
+}
+
+document.getElementById("uanswer").innerHTML = "Your choice: " + q
+
+
+</script>
+
+
+
+</body>
+</html>
