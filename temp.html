@@ -129,16 +129,16 @@
 		<div id = "thermostat">
 			<div id="display">
 				<div id = "currentTemp">
-					<span>00&deg</span>
-					<p id="heatCold">Heating</p>
+					<span id="curTempText">00&deg</span>
+					<p id="heatCold" onclick="hotCold()">heating</p>
 				</div>
 				<div class="title">Prog:</div>
 				<div id="progTemp">
-					<span>00&deg</span>
+					<span id="progTempText">00&deg</span>
 				</div>
 				<div class="title">Override:</div>
 				<div id="overrideTemp">
-					<span>00&deg</span>
+					<span id="overTempText">00&deg</span>
 				</div>
 			</div>
 
@@ -162,28 +162,92 @@
 		</p>
 		
 		<script>
-		var temp = prompt("waht is the temp?");
-		var prog = prompt("what should it be programmed to?")
-		temp = parseInt(temp);
-		document.getElementById("currentTemp").innerHTML = temp;
-		document.getElementById("progTemp").innerHTML = prog;
+		// var temp = prompt("waht is the temp?");
+		// var progTemp = prompt("what should it be programmed to?")
+		// 
+		// document.getElementById("currentTemp").innerHTML = temp;
+		// document.getElementById("progTemp").innerHTML = progTemp;
+		// document.getElementById("overrideTemp").innerHTML = overrideTemp;
 
 
 
-		if (temp > 95 || temp < 45) {
-			alert("please enter a temperature 45-95");
+		// if (temp > 95 || temp < 45) {
+		// 	alert("please enter a temperature 45-95");
+		// }
+
+
+var currentTemp=0;
+var progTemp=0;
+var overrideTemp=0;
+
+		var check = true;
+		while (check) {
+			currentTemp = parseInt(prompt("current Temp?"));
+			if ((currentTemp > 45) && (currentTemp < 95)) {
+				check = false;
+				document.getElementById("curTempText").innerHTML = currentTemp + "&deg;";
+              
+				
+			}
+		}
+		check = true;
+		while (check) {
+			progTemp = parseInt(prompt("programmed temp?"));
+			if ((progTemp > 45) && (progTemp < 95)) {
+				check = false;
+				overrideTemp = progTemp;
+				document.getElementById("progTempText").innerHTML = progTemp + "&deg;";
+              document.getElementById("overTempText").innerHTML = overrideTemp + "&deg;";
+              
+              document.getElementById("progTempText").style.fontSize = "20pt";
+              document.getElementById("progTempText").style.cssFloat = "right";
+              document.getElementById("overTempText").style.fontSize = "20pt";
+              document.getElementById("overTempText").style.cssFloat = "right";
+			}
 		}
 
+		var heatCool = function() {
+		if (overrideTemp > progTemp) {
+			document.getElementById("heatCold").innerHTML = "cooling";
+		}
+		else if(overrideTemp < progTemp) {
+			document.getElementById("heatCold").innerHTML = "Heating";
+		}
+		else {
+			document.getElementById("heatCold").innerHTML = "";
+		}
+	}
 
-		  function incTemp() {
-		  	temp = temp + 1;
-		  	document.getElementById("currentTemp").innerHTML = temp;
+		var overrideTemp = progTemp;
+
+		 var incTemp = function() {
+		  	overrideTemp++;
+		  	document.getElementById("overTempText").innerHTML = overrideTemp + "&deg;";
 		  }
 		  
-		  function decTemp() {
-		  	temp = temp - 1 ;
-		  	document.getElementById("currentTemp").innerHTML = temp;
+		  var decTemp = function() {
+		  	overrideTemp--;
+		  	document.getElementById("overTempText").innerHTML = overrideTemp + "&deg;";
 		  }
+		//   var progTemp = 75;
+		// var overrideTemp = progTemp;
+
+		// document.getElementById("heatCold").innerHTML = "cooling";
+		// document.getElementById("currentTemp").innerHTML = 70;
+		// document.getElementById("progTemp").innerHTML =  progTemp;
+		// document.getElementById("overrideTemp").innerHTML = overrideTemp;
+
+		// var incTemp = function() {
+		//    	overrideTemp++;
+		//    	document.getElementById("overrideTemp").innerHTML = overrideTemp;
+		// }
+
+		// var decTemp = function() {
+		// 	overrideTemp--;
+		// 	document.getElementById("overrideTemp").innerHTML = overrideTemp;
+		// }
+		
+
 		  
 
 		</script>
