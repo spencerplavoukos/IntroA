@@ -204,13 +204,15 @@ var overrideTemp=0;
               document.getElementById("overTempText").style.fontSize = "20pt";
               document.getElementById("overTempText").style.cssFloat = "right";
 			}
+
 		}
 
+
 		var heatCool = function() {
-		if (overrideTemp > progTemp) {
+		if (overrideTemp < currentTemp) {
 			document.getElementById("heatCold").innerHTML = "cooling";
 		}
-		else if(overrideTemp < progTemp) {
+		else if(overrideTemp > currentTemp) {
 			document.getElementById("heatCold").innerHTML = "Heating";
 		}
 		else {
@@ -218,17 +220,19 @@ var overrideTemp=0;
 		}
 	}
 
-		var overrideTemp = progTemp;
-
 		 var incTemp = function() {
 		  	overrideTemp++;
 		  	document.getElementById("overTempText").innerHTML = overrideTemp + "&deg;";
+		  	heatCool();
 		  }
 		  
 		  var decTemp = function() {
 		  	overrideTemp--;
 		  	document.getElementById("overTempText").innerHTML = overrideTemp + "&deg;";
+		  	heatCool();
 		  }
+
+
 		//   var progTemp = 75;
 		// var overrideTemp = progTemp;
 
