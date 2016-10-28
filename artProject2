@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	
+</style>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script type="text/javascript">
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+
+	canvas.width = 600;
+	canvas.height = 400;
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.fillStyle = "#F4D435";
+	ctx.strokeRect(25,12,250,200);
+	ctx.fillRect(25,12,250,200);
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 15;
+	ctx.fillStyle = "#35C0F4";
+	ctx.strokeRect(50,35,200,150);
+	ctx.fillRect(50,35,200,150);
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,60,0, 1 * Math.PI);
+	ctx.strokeStyle = "blue";
+	ctx.stroke();
+	
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,60,Math.PI, 2 * Math.PI);
+	ctx.strokeStyle = "red";
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,50,.5 * Math.PI, 1.5 * Math.PI);
+	ctx.strokeStyle = "green";
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,50,1.5 * Math.PI, .5 * Math.PI);
+	ctx.strokeStyle = "purple";
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,40,.25 * Math.PI, 1.25 * Math.PI);
+	ctx.strokeStyle = "pink";
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,40,1.25 * Math.PI, .25 * Math.PI);
+	ctx.strokeStyle = "#1DE9BB";
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,30,1.75 * Math.PI, .75 * Math.PI);
+	ctx.strokeStyle = "blue";
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,30,.75 * Math.PI, 1.75 * Math.PI);
+	ctx.strokeStyle = "red";
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,20,0, 1 * Math.PI);
+	ctx.strokeStyle = "green";
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,20,1 * Math.PI, 0);
+	ctx.strokeStyle = "#A8E91D";
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,10,0,2 * Math.PI);
+	ctx.strokeStyle = "black";
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 10;
+	ctx.arc(150,110,5,0,2 * Math.PI);
+	ctx.strokeStyle = "#F435A0";
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.lineWidth = 5;
+	ctx.arc(150,110,2.5,0,2 * Math.PI);
+	ctx.strokeStyle = "white";
+	ctx.stroke();	
+
+
+
+	
+</script>
+
+</body>
+</html>
